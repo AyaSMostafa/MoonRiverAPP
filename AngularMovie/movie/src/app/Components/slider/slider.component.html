@@ -1,0 +1,18 @@
+<!-- carousel-caption  wrapper -->
+<div class="flex-container" style="background-color: black; padding-top: 20px; padding-right: 10px; padding-bottom: 5px;">
+      <ngb-carousel [showNavigationArrows]="false" style="width: 100%; background-color: black;" class="col-12">
+            <ng-template ngbSlide *ngFor="let image of images">
+
+                  <div class="flex-child"
+                        style="width: 35%;font-size:medium; font-family: 'sans-serif'; text-align: left; top: 0%; height: 100%; padding: 1em; margin-top: 0%;">
+                        <h1 style="color: brown;">{{ image.title }}</h1>
+                        <p style="line-height:1.5em; color:rgba(255, 255, 255, 0.412);">{{ image.short }}</p>
+                  </div>
+
+                  <div class="flex-child" style="width: 65%; margin-right: 0px; ">
+                        <img [src]="image.src" alt="Random first slide" style="border-radius: 1%; width: 1020px; height: 576px; padding-right: 25px;">
+                  </div>
+            </ng-template>
+      </ngb-carousel>
+</div>
+

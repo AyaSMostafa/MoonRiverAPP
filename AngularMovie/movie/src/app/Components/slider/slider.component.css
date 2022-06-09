@@ -1,0 +1,39 @@
+
+ngb-carousel .wrapper {
+    position: relative;
+
+    height: 0;
+    padding-top: 55%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
+    /* Keep ratio for 900x500 images */
+    size: fixed;
+}
+.flex-container {
+    display: flex;
+    size: fixed;
+    position:static;
+}
+
+.flex-child {
+    flex: 1;
+    border: 0px solid white;
+    size: fixed;
+    margin-top: 0%;
+    display: inline-block;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+
+ngb-carousel .wrapper>img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+}

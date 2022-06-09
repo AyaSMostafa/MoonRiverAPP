@@ -1,0 +1,57 @@
+<div class="d-flex flex-row bd-highlight mb-4">
+
+    <div class="form-group row col-6" style="width: 60%;">
+
+        <label class="col-sm-2 col-form-label mylabelform">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="MovieName" placeholder="Enter Movie Name">
+        </div>
+
+        <label class="col-sm-2 col-form-label mylabelform" style="width: 90px;">Category</label>
+        <div class="col-sm-8">
+            <select id="inputState" class="form-control" [(ngModel)]="Category">
+                <option value="" disabled>Choose...</option>
+                <option *ngFor="let catName of CategoryList">
+                    {{catName.Category}}
+                </option>
+            </select>
+
+
+
+        </div>
+
+        <label class="col-md-2 col-form-label mylabelform">Date </label>
+        <div class="col-sm-10">
+            <input type="date" [(ngModel)]="MovieYear">
+        </div>
+
+        <label class="col-sm-2 col-form-label mylabelform">Language</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="mov_lang" placeholder="Enter Movie Language">
+        </div>
+
+    </div>
+    <div align="center" class="ml-4 bd-highlight col-6" style="width: 50%; right: 0%;">
+        <img [src]=PhotoFilePath height="250px;" width="200px;" style="margin-right: 0%; ">
+        <input type="file" #file (change)="uploadFile(file.files)" style="display:none ;" />
+        <button type="button" class="btn btn-success" (click)="file.click()"
+            style="display:block ; margin-top: 10%;">Upload File</button>
+        <div style="margin-top:10px;">
+            <span class="upload" *ngIf="progress > 0">
+                {{progress}}%
+            </span>
+            <span class="upload" *ngIf="message">
+                {{message}}
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<button align="center" (click)="addMovie()" *ngIf="mov.MovieId==0" class="myBtn btn btn-primary">
+    Add
+</button>
+
+<button align="center" (click)="UpdateMovie()" *ngIf="mov.MovieId!=0" class="myBtn btn btn-primary">
+    Update
+</button>
